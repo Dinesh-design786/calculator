@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator with Waves</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Wave Background -->
+  <div class="wave-background">
+    <svg viewBox="0 0 500 200" preserveAspectRatio="none">
+      <path d="M0,100 C150,200 350,0 500,100 L500,200 L0,200 Z" class="wave"></path>
+    </svg>
+    <svg viewBox="0 0 500 200" preserveAspectRatio="none">
+      <path d="M0,100 C150,200 350,0 500,100 L500,200 L0,200 Z" class="wave"></path>
+    </svg>
+  </div>
+
+  <!-- Calculator -->
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <!-- Basic Mode Buttons -->
+      <button onclick="clearDisplay()"><span class="drop"></span>C</button>
+      <button onclick="appendToDisplay('/')"><span class="drop"></span>/</button>
+      <button onclick="appendToDisplay('*')"><span class="drop"></span>*</button>
+      <button onclick="deleteLast()"><span class="drop"></span>DEL</button>
+      <button onclick="appendToDisplay('7')"><span class="drop"></span>7</button>
+      <button onclick="appendToDisplay('8')"><span class="drop"></span>8</button>
+      <button onclick="appendToDisplay('9')"><span class="drop"></span>9</button>
+      <button onclick="appendToDisplay('-')"><span class="drop"></span>-</button>
+      <button onclick="appendToDisplay('4')"><span class="drop"></span>4</button>
+      <button onclick="appendToDisplay('5')"><span class="drop"></span>5</button>
+      <button onclick="appendToDisplay('6')"><span class="drop"></span>6</button>
+      <button onclick="appendToDisplay('+')"><span class="drop"></span>+</button>
+      <button onclick="appendToDisplay('1')"><span class="drop"></span>1</button>
+      <button onclick="appendToDisplay('2')"><span class="drop"></span>2</button>
+      <button onclick="appendToDisplay('3')"><span class="drop"></span>3</button>
+      <button onclick="calculateResult()" class="equals"><span class="drop"></span>=</button>
+      <button onclick="appendToDisplay('0')" class="zero"><span class="drop"></span>0</button>
+      <button onclick="appendToDisplay('.')"><span class="drop"></span>.</button>
+      <!-- Scientific Mode Buttons -->
+      <button class="scientific" onclick="appendToDisplay('Math.sqrt(')"><span class="drop"></span>√</button>
+      <button class="scientific" onclick="appendToDisplay('Math.pow(')"><span class="drop"></span>x^y</button>
+      <button class="scientific" onclick="appendToDisplay('Math.sin(')"><span class="drop"></span>sin</button>
+      <button class="scientific" onclick="appendToDisplay('Math.cos(')"><span class="drop"></span>cos</button>
+      <button class="scientific" onclick="appendToDisplay('Math.tan(')"><span class="drop"></span>tan</button>
+      <button class="scientific" onclick="appendToDisplay('Math.log(')"><span class="drop"></span>log</button>
+      <button class="scientific" onclick="appendToDisplay('Math.PI')"><span class="drop"></span>π</button>
+      <button class="scientific" onclick="appendToDisplay('Math.E')"><span class="drop"></span>e</button>
+    </div>
+    <!-- Toggle Button -->
+    <button id="mode-toggle" onclick="toggleMode()">Scientific Mode</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

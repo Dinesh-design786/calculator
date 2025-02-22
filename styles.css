@@ -1,0 +1,160 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Wave Background */
+  .wave-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .wave-background svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .wave {
+    fill: rgba(255, 255, 255, 0.1);
+    animation: waveAnimation 10s infinite linear;
+  }
+  
+  .wave-background svg:nth-child(2) .wave {
+    animation-delay: -5s;
+    fill: rgba(255, 255, 255, 0.05);
+  }
+  
+  @keyframes waveAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Calculator */
+  .calculator {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    width: 320px;
+  }
+  
+  #display {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  button {
+    position: relative;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .equals {
+    grid-column: span 2;
+    background-color: #f39c12;
+  }
+  
+  .equals:hover {
+    background-color: #e67e22;
+  }
+  
+  .zero {
+    grid-column: span 2;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Scientific Buttons */
+  .scientific {
+    background-color: #9b59b6;
+  }
+  
+  .scientific:hover {
+    background-color: #8e44ad;
+  }
+  
+  /* Mode Toggle Button */
+  #mode-toggle {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #mode-toggle:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Water Drop Animation */
+  .drop {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: dropAnimation 0.5s ease-out;
+    pointer-events: none;
+  }
+  
+  @keyframes dropAnimation {
+    to {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0;
+    }
+  }
